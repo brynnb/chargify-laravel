@@ -1,5 +1,7 @@
-Chargify Wrapper for Laravel 4
+Chargify Wrapper for Laravel 5 
 =====================================
+
+Updated to use 0.0.5 Chargify SDK.
 
 This is a wrapper using the chargley chargify SDK. It creates a service provider and facade for autoloading into laravel.
 
@@ -8,10 +10,10 @@ How to Install
 
 ### Laravel 5.0
 
-1.  Install the `andrewlamers/chargify-laravel` package
+1.  Install the `brynnb/chargify-laravel` package. Before this works, you also need to add this repository to your composer.json file (since this isn't a registered package).
 
     ```shell
-    $ composer require andrewlamers/chargify-laravel
+    $ composer require brynnb/chargify-laravel
     ```
 
 1. Update `config/app.php` to activate ChargifyLaravel
@@ -20,13 +22,13 @@ How to Install
     # Add `ChargifyLaravelServiceProvider` to the `providers` array
     'providers' => array(
         ...
-        Andrewlamers\ChargifyLaravel\ChargifyLaravelServiceProvider::class,
+        brynnb\ChargifyLaravel\ChargifyLaravelServiceProvider::class,
     )
 
     # Add the `ChargifyLaravelFacade` to the `aliases` array
     'aliases' => array(
         ...
-        'Chargify' => Andrewlamers\ChargifyLaravel\ChargifyLaravelFacade::class
+        'Chargify' => brynnb\ChargifyV2Laravel\ChargifyLaravelFacade::class
     )
     ```
 
@@ -36,52 +38,15 @@ How to Install
     $ php artisan vendor:publish
     ```
 
-1.  Update `app/config/chargify.php` with your chargify API Information
+1.  Update your `/.env` file to have the parameters specified in `app/config/chargify.php`:
 
     ```php
     return array(
-        'hostname' => 'mysite.chargify.com',
-        'api_key' => 'my chargify api key',
-        'shared_key' => 'my chargify shared key'
-    );
-    ```
-
-### Laravel 4.2
-
-1.  Install the `andrewlamers/chargify-laravel` 1.* version
-
-    ```shell
-    $ composer require andrewlamers/chargify-laravel:1.*
-    ```
-
-1. Update `config/app.php` to activate ChargifyLaravel
-
-    ```php
-    # Add `ChargifyLaravelServiceProvider` to the `providers` array
-    'providers' => array(
-        ...
-        'Andrewlamers\ChargifyLaravel\ChargifyLaravelServiceProvider'
-    )
-
-    # Add the `ChargifyLaravelFacade` to the `aliases` array
-    'aliases' => array(
-        ...
-        'Chargify' => 'Andrewlamers\ChargifyLaravel\ChargifyLaravelFacade'
-    )
-    ```
-
-1.  Generate a template Chargify config file
-
-    ```shell
-    $ php artisan config:publish andrewlamers/chargify-laravel
-    ```
-
-1.  Update `app/config/packages/andrewlamers/chargify-laravel/config.php` with your chargify API Information
-
-    ```php
-    return array(
-        'hostname' => 'mysite.chargify.com',
-        'api_key' => 'my chargify api key',
-        'shared_key' => 'my chargify shared key'
+			'hostname' => env('CHARGIFY_HOSTNAME'),
+			'api_key' => env('CHARGIFY_KEY'),
+			'shared_key' => env('CHARGIFY_SHARED_KEY'),
+			'api_id' => env('CHARGIFY_DIRECT_API_ID'),
+			'api_password' => env('CHARGIFY_DIRECT_PASSWORD'),
+			'api_secret' => env('CHARGIFY_DIRECT_SECRET'),
     );
     ```

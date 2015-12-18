@@ -1,9 +1,9 @@
 {
-    "name": "andrewlamers/chargify-laravel",
+    "name": "brynnb/chargify-laravel",
     "description": "Laravel service provider for chargifys API using the chargley chargify SDK.",
     "keywords": ["laravel", "chargify", "chargley"],
     "license": "Apache 2.0",
-    "homepage": "https://github.com/andrewlamers/chargify-laravel",
+    "homepage": "https://github.com/brynnb/chargify-laravel",
     "authors": [
         {
             "name": "Andrew Lamers",
@@ -12,13 +12,19 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "4.*|5.*",
-        "chargely/chargify-sdk-php": "0.0.3"
+        "illuminate/support": "5.*",
+        "brynnb/chargify-sdk-php": "dev-master"
     },
     "autoload": {
         "psr-0": {
-            "Andrewlamers\\ChargifyLaravel\\": "src/"
+            "brynnb\\ChargifyLaravel\\": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/brynnb/chargify-sdk-php"
+        }
+    ]
 }
