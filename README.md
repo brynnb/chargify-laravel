@@ -50,3 +50,6 @@ How to Install
 			'api_secret' => env('CHARGIFY_DIRECT_SECRET'),
     );
     ```
+Credits
+---------------
+This is mostly the work of @andrewlamers, just modified to use the newer version of the SDK/Guzzle. Thanks Andrew!
