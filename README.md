@@ -28,7 +28,7 @@ How to Install
     # Add the `ChargifyLaravelFacade` to the `aliases` array
     'aliases' => array(
         ...
-        'Chargify' => brynnb\ChargifyV2Laravel\ChargifyLaravelFacade::class
+        'Chargify' => brynnb\ChargifyLaravel\ChargifyLaravelFacade::class
     )
     ```
 
