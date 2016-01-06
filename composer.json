@@ -24,7 +24,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/jlmorales/chargify-sdk-php"
+            "url": "https://github.com/JLMorales/chargify-sdk-php"
         }
     ]
 }
