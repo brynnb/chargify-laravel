@@ -1,7 +1,7 @@
 Chargify Wrapper for Laravel 5 
 =====================================
 
-Updated to use 0.1.0 Chargify SDK that uses updated Guzzle. 
+Updated to use 0.1.1 Chargify SDK that uses updated Guzzle. 
 
 This is a wrapper using the chargley chargify SDK. It creates a service provider and facade for autoloading into laravel.
 
